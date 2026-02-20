@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Michael's Photography Portfolio - Portrait & Underwater Photography" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Michael Photography</title>
+  </head>
+  <body class="bg-neutral-950 text-neutral-100 min-h-screen">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-light tracking-widest uppercase">Michael</a>
+        <div class="flex gap-8 text-sm tracking-wider">
+          <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
+          <a href="/portrait" class="hover:text-amber-400 transition-colors">Portrait</a>
+          <a href="/underwater" class="hover:text-amber-400 transition-colors">Underwater</a>
+          <a href="/about" class="hover:text-amber-400 transition-colors">About</a>
+          <a href="/contact" class="hover:text-amber-400 transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+    
+    <main class="pt-20">
+      <slot />
+    </main>
+    
+    <footer class="bg-neutral-900 py-12 mt-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-neutral-500 text-sm tracking-wider">
+          © {new Date().getFullYear()} Michael Photography. All rights reserved.
+        </p>
+        <div class="flex justify-center gap-6 mt-4">
+          <a href="https://instagram.com" target="_blank" class="text-neutral-600 hover:text-amber-400 transition-colors">Instagram</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @import "tailwindcss";
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+</style>

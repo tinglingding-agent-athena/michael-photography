@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const portraitImages = [
+  { id: 1, src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80", title: "Elegance" },
+  { id: 2, src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80", title: "Natural Beauty" },
+  { id: 3, src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80", title: "Gaze" },
+  { id: 4, src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80", title: "Masculine" },
+  { id: 5, src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80", title: "Confidence" },
+  { id: 6, src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80", title: "Soul" },
+  { id: 7, src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80", title: "Radiance" },
+  { id: 8, src: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=800&q=80", title: "Warmth" },
+];
+---
+
+<Layout title="Portrait Photography">
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-amber-400 tracking-[0.3em] text-sm uppercase">Portfolio</span>
+        <h1 class="text-5xl md:text-7xl font-light mt-4">Portrait</h1>
+        <p class="text-neutral-400 mt-4 max-w-2xl mx-auto">
+          Capturing the essence of the human spirit through intimate portraits. 
+          Each image tells a unique story of emotion, personality, and beauty.
+        </p>
+      </div>
+
+      <!-- Instagram Link -->
+      <div class="text-center mb-12">
+        <a 
+          href="https://instagram.com" 
+          target="_blank"
+          class="inline-flex items-center gap-2 text-neutral-500 hover:text-amber-400 transition-colors text-sm tracking-wider"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Follow on Instagram
+        </a>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {portraitImages.map((image) => (
+          <a 
+            href={image.src} 
+            class="group relative aspect-[3/4] overflow-hidden bg-neutral-900"
+            target="_blank"
+          >
+            <img 
+              src={image.src} 
+              alt={image.title}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-white text-sm tracking-wider">{image.title}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Placeholder Note -->
+      <div class="mt-16 text-center">
+        <p class="text-neutral-600 text-sm">
+          More portraits coming soon. Contact me for custom portrait sessions.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

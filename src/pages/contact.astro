@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-amber-400 tracking-[0.3em] text-sm uppercase">Get in Touch</span>
+        <h1 class="text-5xl md:text-7xl font-light mt-4">Contact</h1>
+        <p class="text-neutral-400 mt-4 max-w-2xl mx-auto">
+          Interested in a portrait session, underwater photography, or purchasing prints? 
+          I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <form class="space-y-6" action="#" method="POST">
+          <div>
+            <label for="name" class="block text-sm text-neutral-400 mb-2 tracking-wider">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required
+              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors"
+            />
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm text-neutral-400 mb-2 tracking-wider">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors"
+            />
+          </div>
+          
+          <div>
+            <label for="subject" class="block text-sm text-neutral-400 mb-2 tracking-wider">Subject</label>
+            <select 
+              id="subject" 
+              name="subject" 
+              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors"
+            >
+              <option value="">Select a topic</option>
+              <option value="portrait">Portrait Photography</option>
+              <option value="underwater">Underwater Photography</option>
+              <option value="prints">Print Purchase</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm text-neutral-400 mb-2 tracking-wider">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              required
+              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors resize-none"
+            ></textarea>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="w-full bg-amber-500 text-neutral-950 py-3 tracking-wider text-sm hover:bg-amber-400 transition-colors"
+          >
+            Send Message
+          </button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl font-light mb-4">Let's Create Together</h3>
+            <p class="text-neutral-400 leading-relaxed">
+              Whether you're looking for stunning portraits, need underwater photography for your project, 
+              or want to purchase prints, I'm here to help bring your vision to life.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-amber-400 tracking-wider text-sm uppercase mb-3">Email</h4>
+            <a href="mailto:hello@michaelphotography.com" class="text-neutral-100 hover:text-amber-400 transition-colors">
+              hello@michaelphotography.com
+            </a>
+          </div>
+
+          <div>
+            <h4 class="text-amber-400 tracking-wider text-sm uppercase mb-3">Social</h4>
+            <div class="flex gap-4">
+              <a 
+                href="https://instagram.com" 
+                target="_blank"
+                class="text-neutral-400 hover:text-amber-400 transition-colors"
+              >
+                Instagram
+              </a>
+              <span class="text-neutral-700">/</span>
+              <a 
+                href="https://twitter.com" 
+                target="_blank"
+                class="text-neutral-400 hover:text-amber-400 transition-colors"
+              >
+                Twitter
+              </a>
+            </div>
+          </div>
+
+          <div class="pt-8 border-t border-neutral-800">
+            <p class="text-neutral-500 text-sm">
+              Based in Miami, Florida<br/>
+              Available for travel worldwide
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
