@@ -3,120 +3,177 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contact">
-  <section class="py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="text-amber-400 tracking-[0.3em] text-sm uppercase">Get in Touch</span>
-        <h1 class="text-5xl md:text-7xl font-light mt-4">Contact</h1>
-        <p class="text-neutral-400 mt-4 max-w-2xl mx-auto">
-          Interested in a portrait session, underwater photography, or purchasing prints? 
-          I'd love to hear from you.
-        </p>
-      </div>
+  <!-- Hero -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-900/50 to-neutral-950"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs tracking-[0.3em] uppercase rounded-full mb-6">
+        Get in Touch
+      </span>
+      <h1 class="text-5xl md:text-7xl font-light mb-6">Contact</h1>
+      <p class="text-neutral-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        Interested in working together? Have a question about prints or commissions? 
+        I'd love to hear from you.
+      </p>
+    </div>
+  </section>
 
-      <div class="grid md:grid-cols-2 gap-12">
-        <!-- Contact Form -->
-        <form class="space-y-6" action="#" method="POST">
-          <div>
-            <label for="name" class="block text-sm text-neutral-400 mb-2 tracking-wider">Name</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              required
-              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors"
-            />
-          </div>
-          
-          <div>
-            <label for="email" class="block text-sm text-neutral-400 mb-2 tracking-wider">Email</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required
-              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors"
-            />
-          </div>
-          
-          <div>
-            <label for="subject" class="block text-sm text-neutral-400 mb-2 tracking-wider">Subject</label>
-            <select 
-              id="subject" 
-              name="subject" 
-              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors"
-            >
-              <option value="">Select a topic</option>
-              <option value="portrait">Portrait Photography</option>
-              <option value="underwater">Underwater Photography</option>
-              <option value="prints">Print Purchase</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          
-          <div>
-            <label for="message" class="block text-sm text-neutral-400 mb-2 tracking-wider">Message</label>
-            <textarea 
-              id="message" 
-              name="message" 
-              rows="5" 
-              required
-              class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-400 transition-colors resize-none"
-            ></textarea>
-          </div>
-          
-          <button 
-            type="submit" 
-            class="w-full bg-amber-500 text-neutral-950 py-3 tracking-wider text-sm hover:bg-amber-400 transition-colors"
-          >
-            Send Message
-          </button>
-        </form>
-
+  <!-- Contact Section -->
+  <section class="pb-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        
         <!-- Contact Info -->
-        <div class="space-y-8">
-          <div>
-            <h3 class="text-xl font-light mb-4">Let's Create Together</h3>
-            <p class="text-neutral-400 leading-relaxed">
-              Whether you're looking for stunning portraits, need underwater photography for your project, 
-              or want to purchase prints, I'm here to help bring your vision to life.
-            </p>
-          </div>
+        <div>
+          <h2 class="text-2xl font-light mb-6">Let's Connect</h2>
+          <p class="text-neutral-400 leading-relaxed mb-10">
+            Whether you're looking for portrait sessions, underwater photography, 
+            or interested in purchasing prints, feel free to reach out. 
+            I typically respond within 24-48 hours.
+          </p>
 
-          <div>
-            <h4 class="text-amber-400 tracking-wider text-sm uppercase mb-3">Email</h4>
-            <a href="mailto:hello@michaelphotography.com" class="text-neutral-100 hover:text-amber-400 transition-colors">
-              hello@michaelphotography.com
-            </a>
-          </div>
+          <div class="space-y-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-neutral-500 text-sm tracking-wider uppercase mb-1">Email</p>
+                <a href="mailto:hello@michael.photo" class="text-amber-400 hover:text-white transition-colors text-lg">
+                  hello@michael.photo
+                </a>
+              </div>
+            </div>
 
-          <div>
-            <h4 class="text-amber-400 tracking-wider text-sm uppercase mb-3">Social</h4>
-            <div class="flex gap-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank"
-                class="text-neutral-400 hover:text-amber-400 transition-colors"
-              >
-                Instagram
-              </a>
-              <span class="text-neutral-700">/</span>
-              <a 
-                href="https://twitter.com" 
-                target="_blank"
-                class="text-neutral-400 hover:text-amber-400 transition-colors"
-              >
-                Twitter
-              </a>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-neutral-500 text-sm tracking-wider uppercase mb-1">Based In</p>
+                <p class="text-neutral-300 text-lg">New York, USA</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-neutral-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07.148 4.771 1.691 4 3.252.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-neutral-500 text-sm tracking-wider uppercase mb-1">Social</p>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank"
+                  rel="noopener"
+                  class="text-neutral-300 hover:text-amber-400 transition-colors text-lg"
+                >
+                  @michael.photo
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="pt-8 border-t border-neutral-800">
-            <p class="text-neutral-500 text-sm">
-              Based in Miami, Florida<br/>
-              Available for travel worldwide
-            </p>
+          <!-- Services -->
+          <div class="mt-12 pt-8 border-t border-white/10">
+            <h3 class="text-lg font-light mb-6">Services</h3>
+            <div class="grid gap-4">
+              <div class="p-4 bg-neutral-900/50 rounded-lg border border-white/5">
+                <div class="flex items-center gap-3">
+                  <span class="text-amber-400">📷</span>
+                  <span class="text-neutral-300">Portrait Sessions</span>
+                </div>
+                <p class="text-neutral-500 text-sm mt-2">Available for bookings in New York</p>
+              </div>
+              <div class="p-4 bg-neutral-900/50 rounded-lg border border-white/5">
+                <div class="flex items-center gap-3">
+                  <span class="text-cyan-400">🌊</span>
+                  <span class="text-neutral-300">Underwater Photography</span>
+                </div>
+                <p class="text-neutral-500 text-sm mt-2">Available for dive trips & commissions</p>
+              </div>
+              <div class="p-4 bg-neutral-900/50 rounded-lg border border-white/5">
+                <div class="flex items-center gap-3">
+                  <span class="text-neutral-400">🖼️</span>
+                  <span class="text-neutral-300">Prints</span>
+                </div>
+                <p class="text-neutral-500 text-sm mt-2">Limited edition prints available</p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-neutral-900/50 p-8 rounded-2xl border border-white/5">
+          <form class="space-y-6" name="contact" method="POST" data-netlify="true">
+            <div>
+              <label for="name" class="block text-neutral-400 text-sm tracking-wider mb-2">Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                required
+                class="w-full bg-neutral-950 border border-neutral-800 text-neutral-100 px-4 py-3 rounded-lg focus:outline-none focus:border-amber-500 transition-colors"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-neutral-400 text-sm tracking-wider mb-2">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                required
+                class="w-full bg-neutral-950 border border-neutral-800 text-neutral-100 px-4 py-3 rounded-lg focus:outline-none focus:border-amber-500 transition-colors"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div>
+              <label for="subject" class="block text-neutral-400 text-sm tracking-wider mb-2">Subject</label>
+              <select 
+                id="subject" 
+                name="subject"
+                class="w-full bg-neutral-950 border border-neutral-800 text-neutral-100 px-4 py-3 rounded-lg focus:outline-none focus:border-amber-500 transition-colors"
+              >
+                <option value="">Select a topic</option>
+                <option value="portrait">Portrait Session</option>
+                <option value="underwater">Underwater Photography</option>
+                <option value="prints">Print Purchase</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-neutral-400 text-sm tracking-wider mb-2">Message</label>
+              <textarea 
+                id="message" 
+                name="message"
+                rows="5"
+                required
+                class="w-full bg-neutral-950 border border-neutral-800 text-neutral-100 px-4 py-3 rounded-lg focus:outline-none focus:border-amber-500 transition-colors resize-none"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit"
+              class="w-full bg-amber-500 text-neutral-950 py-4 rounded-lg tracking-wider text-sm font-medium hover:bg-amber-400 transition-colors"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </div>

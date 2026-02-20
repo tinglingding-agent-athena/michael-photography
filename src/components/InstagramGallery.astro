@@ -1,0 +1,93 @@
+---
+// InstagramGallery.astro - Masonry gallery with lightbox
+import { portraitPosts, underwaterPosts } from '../data/instagram';
+
+interface Props {
+  type: 'portrait' | 'underwater';
+  columns?: number;
+}
+
+const { type, columns = 4 } = Astro.props;
+
+const posts = type === 'portrait' ? portraitPosts : underwaterPosts;
+const accentColor = type === 'portrait' ? 'amber' : 'cyan';
+---
+
+<div class="instagram-gallery" data-type={type}>
+  <div class="grid" style={`grid-template-columns: repeat(${columns}, 1fr);`}>
+    {posts.map((post, index) => (
+      <a 
+        href={post.mediaUrl}
+        class="gallery-item group relative overflow-hidden"
+        data-caption={post.caption}
+        target="_blank"
+        style={`animation-delay: ${index * 50}ms`}
+      >
+        <img 
+          src={post.thumbnailUrl}
+          alt={post.caption || `Gallery image ${index + 1}`}
+          loading="lazy"
+          class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div class={`absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <p class="text-white text-sm tracking-wider truncate">{post.caption}</p>
+          </div>
+        </div>
+        <div class={`absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+          <svg class={`w-5 h-5 text-${accentColor}-400`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .instagram-gallery {
+    width: 100%;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .gallery-item {
+    display: block;
+    aspect-ratio: 1;
+    background: neutral-900;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
